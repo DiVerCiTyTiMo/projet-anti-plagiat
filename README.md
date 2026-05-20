@@ -14,3 +14,10 @@ un texte reformulé
 un texte partiellement copié
 un texte totalement différent
 suite a cette série de test faudra comparé les résultat entre les script pour savoir lequel fonctionnerais mieux
+
+Séance du 20 mai — 14h/18h
+
+J’ai compris que le SequenceMatcher de difflib sert à comparer deux textes pour trouver leurs parties communes,
+L’algorithme cherche le plus grand bloc identique entre deux chaînes de caractères.
+Il compare les lettres une par une et construit progressivement les correspondances.
+J ai éssayé de reproduire le code à ma manière.
