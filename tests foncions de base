@@ -1,0 +1,36 @@
+TEST DES FONCTIONS
+
+
+
+La fonction difflib.SequenceMatcher 
+
+
+from difflib import SequenceMatcher
+ratio = SequenceMatcher(None, "Le chat mange", "Le chat dort").ratio()
+
+Retourne un score de similarité entre 0 et 1 (ici a peu près0.72)
+
+
+
+Les opérations sur les ensembles (set().intersection()) 
+
+lire avant (pas obligé):
+https://fr.wikipedia.org/wiki/Indice_et_distance_de_Jaccard
+
+
+en gros ce que ca veut dire  :
+
+L'Intersection (A intersection B) : C'est le nombre de mots qui sont présents à la fois dans le Texte A et dans le Texte B (les mots en commun).
+L'Union (A union B) : C'est le nombre total de mots uniques présents dans les deux textes réunis (le vocabulaire global, en enlevant les doublons).
+
+
+mots_A = set(["le", "chat", "mange"])
+mots_B = set(["le", "chien", "mange"])
+mots_communs = mots_A.intersection(mots_B) # {'le', 'mange'}
+score_jaccard = len(mots_communs) / len(mots_A.union(mots_B))
+
+Sa  transforme les textes en listes de mots, puis en "ensembles" (qui éliminent les doublons). On regarde ensuite combien de mots ils ont en commun par rapport au nombre total de mots uniques. 
+
+Le résultat obtenu est entre 0 et 1 (ou de 0 à 100 %) :
+0 signifie qu'il n'y a absolument aucun mot en commun (0 % de plagiat).
+1 signifie que les deux textes utilisent exactement le même vocabulaire (100 % de similarité).
